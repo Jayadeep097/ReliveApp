@@ -1,0 +1,73 @@
+plugins {
+    id("com.android.application") version "8.2.2" // Compatible with Gradle 8.12
+    id("org.jetbrains.kotlin.android") version "1.9.10" // Compatible with AGP 8.2.0
+    id("com.google.gms.google-services") version "4.3.15" // For Firebase
+    id("dev.flutter.flutter-gradle-plugin")
+    id("alias(libs.plugins.kotlin-compose")
+}
+
+android {
+    namespace = "com.example.reliveapp_android"
+    compileSdk = 34 // Target the latest stable SDK
+
+    defaultConfig {
+        applicationId = "com.example.reliveapp_android"
+        minSdk = 21 // Minimum supported SDK for Firebase and modern libraries
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = true // Minification for release builds
+            isShrinkResources = true // Remove unused resources
+            proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+            )
+        }
+        debug {
+            isMinifyEnabled = false
+            isShrinkResources = false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17 // Gradle 8.12 requires Java 17 or higher
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17" // Match Java compatibility
+    }
+
+    lint {
+        abortOnError = false // Avoid build failure due to lint errors
+    }
+}
+
+dependencies {
+    // Firebase BOM to manage Firebase library versions
+    implementation(platform("com.google.firebase:firebase-bom:32.2.0"))
+
+    // Firebase dependencies
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
+
+    // AndroidX libraries
+    implementation("androidx.core:core-ktx:1.15.0")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.2.0")
+
+    // Compose
+    implementation(libs.androidx-ui)
+    implementation(libs.androidx-ui-tooling-preview)
+    debugImplementation(libs.androidx-ui-tooling)
+
+    // Testing libraries
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+}

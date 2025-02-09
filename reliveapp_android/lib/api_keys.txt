@@ -1,0 +1,5 @@
+google api key: AIzaSyCr867qbBgj8JAkA4CvssT7vDpSpbhWNgY
+firebase api key:
+AIzaSyBp056Xfmg9HZDxOxTHSk5p3-GiI7sGXtI
+coineco api key : CG-6ECfu28PH4qy8uC3zA2PUguK
+openai key: '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

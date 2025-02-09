@@ -1,0 +1,41 @@
+# Flutter/Dart-specific files
+*.dart_tool/
+*.flutter-plugins
+*.flutter-plugins-dependencies
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Build directories
+build/
+.android/
+.ios/
+.captures/
+
+# Gradle files
+.gradle/
+gradle-wrapper.jar
+/gradlew
+/gradlew.bat
+
+# Local configuration files
+local.properties
+key.properties
+
+# Generated files
+**/*.keystore
+**/*.jks
+**/GeneratedPluginRegistrant.java
+
+# IntelliJ/Android Studio specific
+.idea/
+*.iml
+
+# VS Code specific
+.vscode/
+
+# macOS specific
+.DS_Store
+
+# Other system files
+Thumbs.db

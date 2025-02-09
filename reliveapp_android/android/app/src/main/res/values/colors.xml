@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color> <!-- Green -->
+    <color name="colorPrimaryDark">#388E3C</color> <!-- Dark Green -->
+    <color name="colorAccent">#FF5722</color> <!-- Orange -->
+    <color name="windowBackground">#F5F5F5</color> <!-- Light Gray -->
+</resources>

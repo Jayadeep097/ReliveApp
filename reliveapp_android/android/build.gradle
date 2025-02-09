@@ -1,0 +1,21 @@
+buildscript {
+    ext.kotlin_version = '1.8.22' // Define Kotlin version
+    repositories {
+        google() // For Android and Google dependencies
+        mavenCentral() // For other libraries
+    }
+    dependencies {
+        // Compatible Android Gradle Plugin version
+        classpath "com.android.tools.build:gradle:8.2.2"
+
+        // Latest Google Services plugin for Firebase
+        classpath "com.google.gms:google-services:4.3.15"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
